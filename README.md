@@ -185,6 +185,7 @@ http://localhost:8080/api/employees
 
 **Path Parameters:**
 - `id` (integer): ID of the employee
+```
 
 **Responses:**
 
