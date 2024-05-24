@@ -126,7 +126,6 @@ http://localhost:8080/api/employees
   "salary": 60000,
   "hireDate": "2023-01-01"
 }
-
   ```
 - **404 Not Found:** Issue not found
 
