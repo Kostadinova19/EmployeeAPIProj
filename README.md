@@ -1,4 +1,4 @@
-#Employee Management System API 
+# Employee Management System API 
 ## Introduction
 This API allows for the management of employees and their performance reviews. It provides endpoints to create, retrieve, update, and delete employee records as well as performance reviews, enabling efficient management and tracking of employee performance.
 ### Base URL
@@ -29,7 +29,7 @@ http://localhost:8080/api/employees
   "hireDate": "2023-01-01"
 }
 
-**Responses**:
+** Responses **:
 
 201 Created:
 
