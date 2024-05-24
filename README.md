@@ -65,8 +65,7 @@ http://localhost:8080/api/employees
 
 - **200 OK:**
   ```json
-  [
-   [
+  
   {
     "id": 1,
     "firstName": "John",
@@ -85,8 +84,8 @@ http://localhost:8080/api/employees
     "salary": 80000,
     "hireDate": "2022-05-15"
   }
-]
-  ]
+
+  
   ```
 - **204 No Content:** No issues found
 
@@ -216,7 +215,7 @@ http://localhost:8080/api/employees
   "reviewDate": "2023-02-01",
   "review": "Excellent performance"
 }
-
+```
 **Responses:**
 
 - **201 Created:**
