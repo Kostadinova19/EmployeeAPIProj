@@ -65,6 +65,7 @@ http://localhost:8080/api/employees
 - **200 OK:**
   ```json
     [
+  [
   {
     "id": 1,
     "employee": {
@@ -93,6 +94,7 @@ http://localhost:8080/api/employees
     "reviewDate": "2023-03-01",
     "review": "Great leadership"
   }
+  ]
   ]
   ```
 ---
