@@ -66,7 +66,6 @@ http://localhost:8080/api/employees
 - **200 OK:**
   ```json
   [
-  [
   {
     "id": 1,
     "firstName": "John",
@@ -86,7 +85,7 @@ http://localhost:8080/api/employees
     "hireDate": "2022-05-15"
   }
 ]
-  ]
+  
   ```
 - **204 No Content:** No issues found
 
