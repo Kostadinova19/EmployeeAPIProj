@@ -29,6 +29,342 @@ http://localhost:8080/api/employees
   "hireDate": "2023-01-01"
 }
 
+**Responses:**
+
+- **201 Created:**
+  ```json
+  {
+    "id": 1,
+    "type": "Pothole",
+    "description": "Large pothole on Main St.",
+    "location": {
+      "latitude": 40.712776,
+      "longitude": -74.005974
+    },
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "status": "Reported",
+    "createdAt": "2024-05-19T12:00:00Z"
+  }
+  ```
+- **400 Bad Request:** Invalid input
+
+---
+
+### 2. View Current Status of Reported Issues
+
+**HTTP Method:** `GET`
+
+**Endpoint:** `/issues`
+
+**Description:** View the current status of all reported issues.
+
+**Request Headers:**
+- `Accept: application/json`
+
+**Responses:**
+
+- **200 OK:**
+  ```json
+  [
+    {
+      "id": 1,
+      "type": "Pothole",
+      "description": "Large pothole on Main St.",
+      "location": {
+        "latitude": 40.712776,
+        "longitude": -74.005974
+      },
+      "photos": ["photo1.jpg", "photo2.jpg"],
+      "status": "Reported",
+      "createdAt": "2024-05-19T12:00:00Z"
+    },
+    {
+      "id": 2,
+      "type": "Graffiti",
+      "description": "Graffiti on the wall of the library.",
+      "location": {
+        "latitude": 40.712776,
+        "longitude": -74.005974
+      },
+      "photos": ["photo3.jpg"],
+      "status": "In Progress",
+      "createdAt": "2024-05-19T13:00:00Z"
+    }
+  ]
+  ```
+- **204 No Content:** No issues found
+
+---
+
+### 3. Retrieve a Single Issue Report
+
+**HTTP Method:** `GET`
+
+**Endpoint:** `/issues/{id}`
+
+**Description:** Retrieve details of a single issue report by its ID.
+
+**Request Headers:**
+- `Accept: application/json`
+
+**Path Parameters:**
+- `id` (integer): ID of the issue
+
+**Responses:**
+
+- **200 OK:**
+  ```json
+  {
+    "id": 1,
+    "type": "Pothole",
+    "description": "Large pothole on Main St.",
+    "location": {
+      "latitude": 40.712776,
+      "longitude": -74.005974
+    },
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "status": "Reported",
+    "createdAt": "2024-05-19T12:00:00Z"
+  }
+  ```
+- **404 Not Found:** Issue not found
+
+---
+
+### 4. Update Issue Status
+
+**HTTP Method:** `PUT`
+
+**Endpoint:** `/issues/{id}`
+
+**Description:** Update the status of an issue, including steps taken or resolution details.
+
+**Request Headers:**
+- `Content-Type: application/json`
+
+**Path Parameters:**
+- `id` (integer): ID of the issue
+
+**Request Body:**
+```json
+{
+  "status": "Resolved",
+  "resolutionDetails": "Pothole filled on 2024-05-20"
+}
+```
+
+**Responses:**
+
+- **200 OK:**
+  ```json
+  {
+    "id": 1,
+    "type": "Pothole",
+    "description": "Large pothole on Main St.",
+    "location": {
+      "latitude": 40.712776,
+      "longitude": -74.005974
+    },
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "status": "Resolved",
+    "resolutionDetails": "Pothole filled on 2024-05-20",
+    "createdAt": "2024-05-19T12:00:00Z",
+    "updatedAt": "2024-05-20T14:00:00Z"
+  }
+  ```
+- **400 Bad Request:** Invalid input
+- **404 Not Found:** Issue not found
+
+---
+
+### 5. Close an Issue Report
+
+**HTTP Method:** `DELETE`
+
+**Endpoint:** `/issues/{id}`
+
+**Description:** Close an issue report once resolved, retaining historical data for analysis.
+
+**Request Headers:**
+- `Accept: application/json`
+
+**Path Parameters:**
+- `id` (integer): ID of the issue
+
+**Responses:**
+
+- **204 No Content:** Successfully closed
+- **404 Not Found:** Issue not found
+
+---
+**Responses:**
+
+- **201 Created:**
+  ```json
+  {
+    "id": 1,
+    "type": "Pothole",
+    "description": "Large pothole on Main St.",
+    "location": {
+      "latitude": 40.712776,
+      "longitude": -74.005974
+    },
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "status": "Reported",
+    "createdAt": "2024-05-19T12:00:00Z"
+  }
+  ```
+- **400 Bad Request:** Invalid input
+
+---
+
+### 2. View Current Status of Reported Issues
+
+**HTTP Method:** `GET`
+
+**Endpoint:** `/issues`
+
+**Description:** View the current status of all reported issues.
+
+**Request Headers:**
+- `Accept: application/json`
+
+**Responses:**
+
+- **200 OK:**
+  ```json
+  [
+    {
+      "id": 1,
+      "type": "Pothole",
+      "description": "Large pothole on Main St.",
+      "location": {
+        "latitude": 40.712776,
+        "longitude": -74.005974
+      },
+      "photos": ["photo1.jpg", "photo2.jpg"],
+      "status": "Reported",
+      "createdAt": "2024-05-19T12:00:00Z"
+    },
+    {
+      "id": 2,
+      "type": "Graffiti",
+      "description": "Graffiti on the wall of the library.",
+      "location": {
+        "latitude": 40.712776,
+        "longitude": -74.005974
+      },
+      "photos": ["photo3.jpg"],
+      "status": "In Progress",
+      "createdAt": "2024-05-19T13:00:00Z"
+    }
+  ]
+  ```
+- **204 No Content:** No issues found
+
+---
+
+### 3. Retrieve a Single Issue Report
+
+**HTTP Method:** `GET`
+
+**Endpoint:** `/issues/{id}`
+
+**Description:** Retrieve details of a single issue report by its ID.
+
+**Request Headers:**
+- `Accept: application/json`
+
+**Path Parameters:**
+- `id` (integer): ID of the issue
+
+**Responses:**
+
+- **200 OK:**
+  ```json
+  {
+    "id": 1,
+    "type": "Pothole",
+    "description": "Large pothole on Main St.",
+    "location": {
+      "latitude": 40.712776,
+      "longitude": -74.005974
+    },
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "status": "Reported",
+    "createdAt": "2024-05-19T12:00:00Z"
+  }
+  ```
+- **404 Not Found:** Issue not found
+
+---
+
+### 4. Update Issue Status
+
+**HTTP Method:** `PUT`
+
+**Endpoint:** `/issues/{id}`
+
+**Description:** Update the status of an issue, including steps taken or resolution details.
+
+**Request Headers:**
+- `Content-Type: application/json`
+
+**Path Parameters:**
+- `id` (integer): ID of the issue
+
+**Request Body:**
+```json
+{
+  "status": "Resolved",
+  "resolutionDetails": "Pothole filled on 2024-05-20"
+}
+```
+
+**Responses:**
+
+- **200 OK:**
+  ```json
+  {
+    "id": 1,
+    "type": "Pothole",
+    "description": "Large pothole on Main St.",
+    "location": {
+      "latitude": 40.712776,
+      "longitude": -74.005974
+    },
+    "photos": ["photo1.jpg", "photo2.jpg"],
+    "status": "Resolved",
+    "resolutionDetails": "Pothole filled on 2024-05-20",
+    "createdAt": "2024-05-19T12:00:00Z",
+    "updatedAt": "2024-05-20T14:00:00Z"
+  }
+  ```
+- **400 Bad Request:** Invalid input
+- **404 Not Found:** Issue not found
+
+---
+
+### 5. Close an Issue Report
+
+**HTTP Method:** `DELETE`
+
+**Endpoint:** `/issues/{id}`
+
+**Description:** Close an issue report once resolved, retaining historical data for analysis.
+
+**Request Headers:**
+- `Accept: application/json`
+
+**Path Parameters:**
+- `id` (integer): ID of the issue
+
+**Responses:**
+
+- **204 No Content:** Successfully closed
+- **404 Not Found:** Issue not found
+
+---
 ** Responses **:
 
 201 Created:
