@@ -62,33 +62,39 @@ http://localhost:8080/api/employees
 - `Accept: application/json`
 
 **Responses:**
-
 - **200 OK:**
   ```json
-  [
+    [
   {
     "id": 1,
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
-    "jobRole": "Developer",
-    "salary": 60000,
-    "hireDate": "2023-01-01"
+    "employee": {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "jobRole": "Developer",
+      "salary": 60000,
+      "hireDate": "2023-01-01"
+    },
+    "reviewDate": "2023-02-01",
+    "review": "Excellent performance"
   },
   {
     "id": 2,
-    "firstName": "Jane",
-    "lastName": "Smith",
-    "email": "jane.smith@example.com",
-    "jobRole": "Manager",
-    "salary": 80000,
-    "hireDate": "2022-05-15"
+    "employee": {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "jobRole": "Manager",
+      "salary": 80000,
+      "hireDate": "2022-05-15"
+    },
+    "reviewDate": "2023-03-01",
+    "review": "Great leadership"
   }
-]
-  
+  ]
   ```
-- **204 No Content:** No issues found
-
 ---
 
 ### 3. Retrieve a Single Employee
