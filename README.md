@@ -28,7 +28,7 @@ http://localhost:8080/api/employees
   "salary": 60000,
   "hireDate": "2023-01-01"
 }
-
+```
 **Responses:**
 
 - **201 Created:**
@@ -54,177 +54,9 @@ http://localhost:8080/api/employees
 
 **HTTP Method:** `GET`
 
-**Endpoint:** `/issues`
+**Endpoint:** `/employees`
 
-**Description:** View the current status of all reported issues.
-
-**Request Headers:**
-- `Accept: application/json`
-
-**Responses:**
-
-- **200 OK:**
-  ```json
-  [
-    {
-      "id": 1,
-      "type": "Pothole",
-      "description": "Large pothole on Main St.",
-      "location": {
-        "latitude": 40.712776,
-        "longitude": -74.005974
-      },
-      "photos": ["photo1.jpg", "photo2.jpg"],
-      "status": "Reported",
-      "createdAt": "2024-05-19T12:00:00Z"
-    },
-    {
-      "id": 2,
-      "type": "Graffiti",
-      "description": "Graffiti on the wall of the library.",
-      "location": {
-        "latitude": 40.712776,
-        "longitude": -74.005974
-      },
-      "photos": ["photo3.jpg"],
-      "status": "In Progress",
-      "createdAt": "2024-05-19T13:00:00Z"
-    }
-  ]
-  ```
-- **204 No Content:** No issues found
-
----
-
-### 3. Retrieve a Single Issue Report
-
-**HTTP Method:** `GET`
-
-**Endpoint:** `/issues/{id}`
-
-**Description:** Retrieve details of a single issue report by its ID.
-
-**Request Headers:**
-- `Accept: application/json`
-
-**Path Parameters:**
-- `id` (integer): ID of the issue
-
-**Responses:**
-
-- **200 OK:**
-  ```json
-  {
-    "id": 1,
-    "type": "Pothole",
-    "description": "Large pothole on Main St.",
-    "location": {
-      "latitude": 40.712776,
-      "longitude": -74.005974
-    },
-    "photos": ["photo1.jpg", "photo2.jpg"],
-    "status": "Reported",
-    "createdAt": "2024-05-19T12:00:00Z"
-  }
-  ```
-- **404 Not Found:** Issue not found
-
----
-
-### 4. Update Issue Status
-
-**HTTP Method:** `PUT`
-
-**Endpoint:** `/issues/{id}`
-
-**Description:** Update the status of an issue, including steps taken or resolution details.
-
-**Request Headers:**
-- `Content-Type: application/json`
-
-**Path Parameters:**
-- `id` (integer): ID of the issue
-
-**Request Body:**
-```json
-{
-  "status": "Resolved",
-  "resolutionDetails": "Pothole filled on 2024-05-20"
-}
-```
-
-**Responses:**
-
-- **200 OK:**
-  ```json
-  {
-    "id": 1,
-    "type": "Pothole",
-    "description": "Large pothole on Main St.",
-    "location": {
-      "latitude": 40.712776,
-      "longitude": -74.005974
-    },
-    "photos": ["photo1.jpg", "photo2.jpg"],
-    "status": "Resolved",
-    "resolutionDetails": "Pothole filled on 2024-05-20",
-    "createdAt": "2024-05-19T12:00:00Z",
-    "updatedAt": "2024-05-20T14:00:00Z"
-  }
-  ```
-- **400 Bad Request:** Invalid input
-- **404 Not Found:** Issue not found
-
----
-
-### 5. Close an Issue Report
-
-**HTTP Method:** `DELETE`
-
-**Endpoint:** `/issues/{id}`
-
-**Description:** Close an issue report once resolved, retaining historical data for analysis.
-
-**Request Headers:**
-- `Accept: application/json`
-
-**Path Parameters:**
-- `id` (integer): ID of the issue
-
-**Responses:**
-
-- **204 No Content:** Successfully closed
-- **404 Not Found:** Issue not found
-
----
-**Responses:**
-
-- **201 Created:**
-  ```json
-  {
-    "id": 1,
-    "type": "Pothole",
-    "description": "Large pothole on Main St.",
-    "location": {
-      "latitude": 40.712776,
-      "longitude": -74.005974
-    },
-    "photos": ["photo1.jpg", "photo2.jpg"],
-    "status": "Reported",
-    "createdAt": "2024-05-19T12:00:00Z"
-  }
-  ```
-- **400 Bad Request:** Invalid input
-
----
-
-### 2. View Current Status of Reported Issues
-
-**HTTP Method:** `GET`
-
-**Endpoint:** `/issues`
-
-**Description:** View the current status of all reported issues.
+**Description:** Retrieve a list of all employees.
 
 **Request Headers:**
 - `Accept: application/json`
@@ -234,171 +66,7 @@ http://localhost:8080/api/employees
 - **200 OK:**
   ```json
   [
-    {
-      "id": 1,
-      "type": "Pothole",
-      "description": "Large pothole on Main St.",
-      "location": {
-        "latitude": 40.712776,
-        "longitude": -74.005974
-      },
-      "photos": ["photo1.jpg", "photo2.jpg"],
-      "status": "Reported",
-      "createdAt": "2024-05-19T12:00:00Z"
-    },
-    {
-      "id": 2,
-      "type": "Graffiti",
-      "description": "Graffiti on the wall of the library.",
-      "location": {
-        "latitude": 40.712776,
-        "longitude": -74.005974
-      },
-      "photos": ["photo3.jpg"],
-      "status": "In Progress",
-      "createdAt": "2024-05-19T13:00:00Z"
-    }
-  ]
-  ```
-- **204 No Content:** No issues found
-
----
-
-### 3. Retrieve a Single Issue Report
-
-**HTTP Method:** `GET`
-
-**Endpoint:** `/issues/{id}`
-
-**Description:** Retrieve details of a single issue report by its ID.
-
-**Request Headers:**
-- `Accept: application/json`
-
-**Path Parameters:**
-- `id` (integer): ID of the issue
-
-**Responses:**
-
-- **200 OK:**
-  ```json
-  {
-    "id": 1,
-    "type": "Pothole",
-    "description": "Large pothole on Main St.",
-    "location": {
-      "latitude": 40.712776,
-      "longitude": -74.005974
-    },
-    "photos": ["photo1.jpg", "photo2.jpg"],
-    "status": "Reported",
-    "createdAt": "2024-05-19T12:00:00Z"
-  }
-  ```
-- **404 Not Found:** Issue not found
-
----
-
-### 4. Update Issue Status
-
-**HTTP Method:** `PUT`
-
-**Endpoint:** `/issues/{id}`
-
-**Description:** Update the status of an issue, including steps taken or resolution details.
-
-**Request Headers:**
-- `Content-Type: application/json`
-
-**Path Parameters:**
-- `id` (integer): ID of the issue
-
-**Request Body:**
-```json
-{
-  "status": "Resolved",
-  "resolutionDetails": "Pothole filled on 2024-05-20"
-}
-```
-
-**Responses:**
-
-- **200 OK:**
-  ```json
-  {
-    "id": 1,
-    "type": "Pothole",
-    "description": "Large pothole on Main St.",
-    "location": {
-      "latitude": 40.712776,
-      "longitude": -74.005974
-    },
-    "photos": ["photo1.jpg", "photo2.jpg"],
-    "status": "Resolved",
-    "resolutionDetails": "Pothole filled on 2024-05-20",
-    "createdAt": "2024-05-19T12:00:00Z",
-    "updatedAt": "2024-05-20T14:00:00Z"
-  }
-  ```
-- **400 Bad Request:** Invalid input
-- **404 Not Found:** Issue not found
-
----
-
-### 5. Close an Issue Report
-
-**HTTP Method:** `DELETE`
-
-**Endpoint:** `/issues/{id}`
-
-**Description:** Close an issue report once resolved, retaining historical data for analysis.
-
-**Request Headers:**
-- `Accept: application/json`
-
-**Path Parameters:**
-- `id` (integer): ID of the issue
-
-**Responses:**
-
-- **204 No Content:** Successfully closed
-- **404 Not Found:** Issue not found
-
----
-** Responses **:
-
-201 Created:
-
-json
-Copy code
-{
-  "id": 1,
-  "firstName": "John",
-  "lastName": "Doe",
-  "email": "john.doe@example.com",
-  "jobRole": "Developer",
-  "salary": 60000,
-  "hireDate": "2023-01-01"
-}
-400 Bad Request: Invalid input
-
-2. Get All Employees
-HTTP Method: GET
-
-Endpoint: /employees
-
-Description: Retrieve a list of all employees.
-
-Request Headers:
-
-Accept: application/json
-Responses:
-
-200 OK:
-
-json
-Copy code
-[
+   [
   {
     "id": 1,
     "firstName": "John",
@@ -418,28 +86,31 @@ Copy code
     "hireDate": "2022-05-15"
   }
 ]
-204 No Content: No employees found
+  ]
+  ```
+- **204 No Content:** No issues found
 
-3. Retrieve a Single Employee
-HTTP Method: GET
+---
 
-Endpoint: /employees/{id}
+### 3. Retrieve a Single Employee
 
-Description: Retrieve details of a single employee by their ID.
+**HTTP Method:** `GET`
 
-Request Headers:
+**Endpoint:** `/employees/{id}`
 
-Accept: application/json
-Path Parameters:
+**Description:** Retrieve details of a single issue report by their ID.
 
-id (integer): ID of the employee
-Responses:
+**Request Headers:**
+- `Accept: application/json`
 
-200 OK:
+**Path Parameters:**
+- `id` (integer): ID of the employee
 
-json
-Copy code
-{
+**Responses:**
+
+- **200 OK:**
+  ```json
+  {
   "id": 1,
   "firstName": "John",
   "lastName": "Doe",
@@ -448,25 +119,28 @@ Copy code
   "salary": 60000,
   "hireDate": "2023-01-01"
 }
-404 Not Found: Employee not found
 
-4. Update Employee
-HTTP Method: PUT
+  ```
+- **404 Not Found:** Issue not found
 
-Endpoint: /employees/{id}
+---
 
-Description: Update details of an existing employee.
+### 4. Update Employee
 
-Request Headers:
+**HTTP Method:** `PUT`
 
-Content-Type: application/json
-Path Parameters:
+**Endpoint:** `/employees/{id}`
 
-id (integer): ID of the employee
-Request Body:
+**Description:** Update details of an existing employee.
 
-json
-Copy code
+**Request Headers:**
+- `Content-Type: application/json`
+
+**Path Parameters:**
+- `id` (integer): ID of the employee
+
+**Request Body:**
+```json
 {
   "firstName": "John",
   "lastName": "Doe",
@@ -475,13 +149,14 @@ Copy code
   "salary": 70000,
   "hireDate": "2023-01-01"
 }
-Responses:
+**
+```
 
-200 OK:
+**Responses:**
 
-json
-Copy code
-{
+- **200 OK:**
+  ```json
+  {
   "id": 1,
   "firstName": "John",
   "lastName": "Doe",
@@ -490,44 +165,49 @@ Copy code
   "salary": 70000,
   "hireDate": "2023-01-01"
 }
-400 Bad Request: Invalid input
 
-404 Not Found: Employee not found
+  ```
+- **400 Bad Request:** Invalid input
+- **404 Not Found:** Employee not found
 
-5. Delete Employee
-HTTP Method: DELETE
+---
 
-Endpoint: /employees/{id}
+### 5. Delete Employee
 
-Description: Delete an existing employee.
+**HTTP Method:** `DELETE`
 
-Request Headers:
+**Endpoint:** `/employee/{id}`
 
-Accept: application/json
-Path Parameters:
+**Description:** Delete an existing employee.
 
-id (integer): ID of the employee
-Responses:
+**Request Headers:**
+- `Accept: application/json`
 
-204 No Content: Successfully deleted
+**Path Parameters:**
+- `id` (integer): ID of the employee
 
-404 Not Found: Employee not found
+**Responses:**
 
-Performance Review Endpoints
-1. Create a New Performance Review
-HTTP Method: POST
+- **204 No Content:** Successfully closed
+- **404 Not Found:** Issue not found
 
-Endpoint: /reviews
+---
 
-Description: Create a new performance review for an employee.
+# Performance Review Endpoints
 
-Request Headers:
+### 1. Create a New Performance Review
 
-Content-Type: application/json
-Request Body:
+**HTTP Method**: `POST`
 
-json
-Copy code
+**Endpoint**: `/reviews`
+
+**Description**: Create a new performance review for an employee.
+
+**Request Headers**:
+- `Content-Type: application/json`
+
+**Request Body**:
+```json
 {
   "employee": {
     "id": 1
@@ -535,12 +215,10 @@ Copy code
   "reviewDate": "2023-02-01",
   "review": "Excellent performance"
 }
-Responses:
 
-201 Created:
+**Responses:**
 
-json
-Copy code
+- **201 Created:**
 {
   "id": 1,
   "employee": {
@@ -549,160 +227,6 @@ Copy code
   "reviewDate": "2023-02-01",
   "review": "Excellent performance"
 }
-400 Bad Request: Invalid input
 
-2. Get All Performance Reviews
-HTTP Method: GET
-
-Endpoint: /reviews
-
-Description: Retrieve a list of all performance reviews.
-
-Request Headers:
-
-Accept: application/json
-Responses:
-
-200 OK:
-
-json
-Copy code
-[
-  {
-    "id": 1,
-    "employee": {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "john.doe@example.com",
-      "jobRole": "Developer",
-      "salary": 60000,
-      "hireDate": "2023-01-01"
-    },
-    "reviewDate": "2023-02-01",
-    "review": "Excellent performance"
-  },
-  {
-    "id": 2,
-    "employee": {
-      "id": 2,
-      "firstName": "Jane",
-      "lastName": "Smith",
-      "email": "jane.smith@example.com",
-      "jobRole": "Manager",
-      "salary": 80000,
-      "hireDate": "2022-05-15"
-    },
-    "reviewDate": "2023-03-01",
-    "review": "Great leadership"
-  }
-]
-204 No Content: No performance reviews found
-
-3. Retrieve a Single Performance Review
-HTTP Method: GET
-
-Endpoint: /reviews/{id}
-
-Description: Retrieve details of a single performance review by its ID.
-
-Request Headers:
-
-Accept: application/json
-Path Parameters:
-
-id (integer): ID of the performance review
-Responses:
-
-200 OK:
-
-json
-Copy code
-{
-  "id": 1,
-  "employee": {
-    "id": 1,
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
-    "jobRole": "Developer",
-    "salary": 60000,
-    "hireDate": "2023-01-01"
-  },
-  "reviewDate": "2023-02-01",
-  "review": "Excellent performance"
-}
-404 Not Found: Performance review not found
-
-4. Update Performance Review
-HTTP Method: PUT
-
-Endpoint: /reviews/{id}
-
-Description: Update details of an existing performance review.
-
-Request Headers:
-
-Content-Type: application/json
-Path Parameters:
-
-id (integer): ID of the performance review
-Request Body:
-
-json
-Copy code
-{
-  "reviewDate": "2023-02-15",
-  "review": "Outstanding performance"
-}
-Responses:
-
-200 OK:
-
-json
-Copy code
-{
-  "id": 1,
-  "employee": {
-    "id": 1,
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
-    "jobRole": "Developer",
-    "salary": 60000,
-    "hireDate": "2023-01-01"
-  },
-  "reviewDate": "2023-02-15",
-  "review": "Outstanding performance"
-}
-400 Bad Request: Invalid input
-
-404 Not Found: Performance review not found
-
-5. Delete Performance Review
-HTTP Method: DELETE
-
-Endpoint: /reviews/{id}
-
-Description: Delete an existing performance review.
-
-Request Headers:
-
-Accept: application/json
-Path Parameters:
-
-id (integer): ID of the performance review
-Responses:
-
-204 No Content: Successfully deleted
-
-404 Not Found: Performance review not found
-
-Application Configuration
-application.properties
-Create a file named application.properties in the src/main/resources directory:
-
-properties
-Copy code
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.datasource.driverClassName=org.h2
+- **400 Bad Request: ** Invalid input
+---
