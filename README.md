@@ -125,6 +125,7 @@ http://localhost:8080/api/employees
   "hireDate": "2023-01-01"
 }```
 - **404 Not Found:** Issue not found
+  ---
 ### 4. Update Employee
 
 **HTTP Method:** `PUT`
@@ -184,7 +185,7 @@ http://localhost:8080/api/employees
 
 **Path Parameters:**
 - `id` (integer): ID of the employee
-```
+
 **Responses:**
 - **204 No Content:** Successfully closed
 - **404 Not Found:** Issue not found
