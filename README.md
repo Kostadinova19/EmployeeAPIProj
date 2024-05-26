@@ -5,8 +5,6 @@ This API allows for the management of employees and their performance reviews. I
 http://localhost:8080/api/employees
 ## Endpoints
 
-## Employee Endpoints
-
 ### 1. Create a New Employee
 **HTTP Method**: `POST`
 
@@ -116,8 +114,8 @@ http://localhost:8080/api/employees
 
 - **200 OK:**
   ```json
- 
-  {
+
+ {
   "id": 1,
   "firstName": "John",
   "lastName": "Doe",
@@ -125,13 +123,9 @@ http://localhost:8080/api/employees
   "jobRole": "Developer",
   "salary": 60000,
   "hireDate": "2023-01-01"
-}
-
-  ```
+}```
 - **404 Not Found:** Issue not found
----
-
-#### 4. Update Employee
+### 4. Update Employee
 
 **HTTP Method:** `PUT`
 
@@ -146,6 +140,7 @@ http://localhost:8080/api/employees
 - `id` (integer): ID of the employee
 
 **Request Body:**
+
 ```json
 {
   "firstName": "John",
@@ -170,9 +165,7 @@ http://localhost:8080/api/employees
   "jobRole": "Senior Developer",
   "salary": 70000,
   "hireDate": "2023-01-01"
-}
-
-  ```
+} ```
 - **400 Bad Request:** Invalid input
 - **404 Not Found:** Employee not found
 
@@ -192,17 +185,14 @@ http://localhost:8080/api/employees
 **Path Parameters:**
 - `id` (integer): ID of the employee
 ```
-
 **Responses:**
-
 - **204 No Content:** Successfully closed
 - **404 Not Found:** Issue not found
-
 ---
 
-# Performance Review Endpoints
+#### Performance Review Endpoints
 
-### 1. Create a New Performance Review
+##### 1. Create a New Performance Review
 
 **HTTP Method**: `POST`
 
