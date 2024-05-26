@@ -8,8 +8,6 @@ http://localhost:8080/api
 
 ## Endpoints
 
-### Employees
-
 #### 1.Create a New Employee
 - **HTTP Method:** POST
 - **Endpoint:** `/employees`
