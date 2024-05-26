@@ -123,9 +123,11 @@ http://localhost:8080/api/employees
   "jobRole": "Developer",
   "salary": 60000,
   "hireDate": "2023-01-01"
-}```
+}
+
 - **404 Not Found:** Issue not found
-  ---
+---
+
 ### 4. Update Employee
 
 **HTTP Method:** `PUT`
