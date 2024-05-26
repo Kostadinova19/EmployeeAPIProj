@@ -23,28 +23,23 @@ http://localhost:8080/api/employees
   "email": "john.doe@example.com",
   "jobRole": "Developer",
   "salary": 60000,
-  "hireDate": "2023-01-01"
+  "hireDate": "2023-01-01",
 }
 ```
 **Responses:**
-
-- **201 Created:**
+ **201 Created:**
   ```json
-  {
-    "id": 1,
-    "type": "Pothole",
-    "description": "Large pothole on Main St.",
-    "location": {
-      "latitude": 40.712776,
-      "longitude": -74.005974
-    },
-    "photos": ["photo1.jpg", "photo2.jpg"],
-    "status": "Reported",
-    "createdAt": "2024-05-19T12:00:00Z"
-  }
+ {
+ "id":1,
+ "firstName":"John",
+ "lastName":"Doe",
+ "email":"john.doe@example.com",
+ "jobRole":"Developer",
+ "salary":60000.0,
+ "hireDate": "2023-01-01",
+ }
   ```
 - **400 Bad Request:** Invalid input
-
 ---
 
 ### 2. View Current Status of Reported Issues
@@ -125,7 +120,7 @@ http://localhost:8080/api/employees
 }
 ```
 - **404 Not Found:** Issue not found
----
+
 
 ### 4. Update Employee
 
