@@ -10,7 +10,7 @@ http://localhost:8080/api
 
 ### Employees
 
-#### Create a New Employee
+#### 1.Create a New Employee
 - **HTTP Method:** POST
 - **Endpoint:** `/employees`
 - **Description:** Add a new employee profile.
@@ -41,7 +41,7 @@ http://localhost:8080/api
     ```
   - **400 Bad Request:** Invalid input
 
-#### View All Employees
+#### 2.View All Employees
 - **HTTP Method:** GET
 - **Endpoint:** `/employees`
 - **Description:** Retrieve all employee profiles.
@@ -63,7 +63,7 @@ http://localhost:8080/api
     ```
   - **204 No Content:** No employees found
 
-#### Retrieve a Single Employee
+#### 3.Retrieve a Single Employee
 - **HTTP Method:** GET
 - **Endpoint:** `/employees/{id}`
 - **Description:** Retrieve details of a single employee by their ID.
@@ -84,7 +84,7 @@ http://localhost:8080/api
     ```
   - **404 Not Found:** Employee not found
 
-#### Update Employee Information
+#### 4.Update Employee Information
 - **HTTP Method:** PUT
 - **Endpoint:** `/employees/{id}`
 - **Description:** Update employee information.
@@ -117,7 +117,7 @@ http://localhost:8080/api
   - **400 Bad Request:** Invalid input
   - **404 Not Found:** Employee not found
 
-#### Delete Employee
+#### 5.Delete Employee
 - **HTTP Method:** DELETE
 - **Endpoint:** `/employees/{id}`
 - **Description:** Remove an employee from the system.
