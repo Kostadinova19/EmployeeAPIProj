@@ -41,7 +41,6 @@ http://localhost:8080/api/employees
   ```
 - **400 Bad Request:** Invalid input
 ---
-
 ### 2. View all employees
 
 **HTTP Method:** `GET`
@@ -86,14 +85,13 @@ http://localhost:8080/api/employees
   ]
   ```
 ---
-
 ### 3. Retrieve a Single Employee
 
 **HTTP Method:** `GET`
 
 **Endpoint:** `/employees/{id}`
 
-**Description:** Retrieve details of a single issue report by their ID.
+**Description:** Retrieve details of a single employee by their ID.
 
 **Request Headers:**
 - `Accept: application/json`
@@ -112,11 +110,11 @@ http://localhost:8080/api/employees
   "email": "john.doe@example.com",
   "jobRole": "Developer",
   "salary": 60000,
-  "hireDate": "2023-01-01"
+  "hireDate": "2023-01-01",
 }
 ```
 - **404 Not Found:** Issue not found
-
+---
 
 ### 4. Update Employee
 
@@ -133,7 +131,6 @@ http://localhost:8080/api/employees
 - `id` (integer): ID of the employee
 
 **Request Body:**
-
 ```json
 {
   "firstName": "John",
@@ -141,9 +138,8 @@ http://localhost:8080/api/employees
   "email": "john.doe@example.com",
   "jobRole": "Senior Developer",
   "salary": 70000,
-  "hireDate": "2023-01-01"
+  "hireDate": "2023-01-01",
 }
-
 ```
 
 **Responses:**
@@ -158,12 +154,11 @@ http://localhost:8080/api/employees
   "jobRole": "Senior Developer",
   "salary": 70000,
   "hireDate": "2023-01-01"
-} ```
+} 
+```
 - **400 Bad Request:** Invalid input
 - **404 Not Found:** Employee not found
-
 ---
-
 ### 5. Delete Employee
 
 **HTTP Method:** `DELETE`
@@ -179,13 +174,14 @@ http://localhost:8080/api/employees
 - `id` (integer): ID of the employee
 
 **Responses:**
+
 - **204 No Content:** Successfully closed
 - **404 Not Found:** Issue not found
 ---
 
 #### Performance Review Endpoints
 
-##### 1. Create a New Performance Review
+###### 1. Create a New Performance Review
 
 **HTTP Method**: `POST`
 
@@ -217,6 +213,6 @@ http://localhost:8080/api/employees
   "reviewDate": "2023-02-01",
   "review": "Excellent performance"
 }
-
+```
 - **400 Bad Request: ** Invalid input
 ---
