@@ -1,14 +1,13 @@
 # Employee Management System API 
 ## Introduction
 This API allows for the management of employees and their performance reviews. It provides endpoints to create, retrieve, update, and delete employee records as well as performance reviews, enabling efficient management and tracking of employee performance.
-### Base URL
+## Base URL
 http://localhost:8080/api/employees
-#### 
 ## Endpoints
 
-### Employee Endpoints
+## Employee Endpoints
 
-#### 1. Create a New Employee
+### 1. Create a New Employee
 **HTTP Method**: `POST`
 
 **Endpoint**: `/employees`
@@ -117,6 +116,7 @@ http://localhost:8080/api/employees
 
 - **200 OK:**
   ```json
+ 
   {
   "id": 1,
   "firstName": "John",
@@ -126,12 +126,12 @@ http://localhost:8080/api/employees
   "salary": 60000,
   "hireDate": "2023-01-01"
 }
+
   ```
 - **404 Not Found:** Issue not found
-
 ---
 
-### 4. Update Employee
+#### 4. Update Employee
 
 **HTTP Method:** `PUT`
 
