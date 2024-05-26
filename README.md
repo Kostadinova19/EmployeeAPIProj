@@ -27,7 +27,7 @@ http://localhost:8080/api/employees
 }
 ```
 **Responses:**
- **201 Created:**
+-**201 Created:**
   ```json
  {
  "id":1,
@@ -42,7 +42,7 @@ http://localhost:8080/api/employees
 - **400 Bad Request:** Invalid input
 ---
 
-### 2. View Current Status of Reported Issues
+### 2. View all employees
 
 **HTTP Method:** `GET`
 
@@ -59,8 +59,6 @@ http://localhost:8080/api/employees
     [
   [
   {
-    "id": 1,
-    "employee": {
       "id": 1,
       "firstName": "John",
       "lastName": "Doe",
@@ -68,13 +66,11 @@ http://localhost:8080/api/employees
       "jobRole": "Developer",
       "salary": 60000,
       "hireDate": "2023-01-01"
-    },
+    }
     "reviewDate": "2023-02-01",
     "review": "Excellent performance"
   },
   {
-    "id": 2,
-    "employee": {
       "id": 2,
       "firstName": "Jane",
       "lastName": "Smith",
