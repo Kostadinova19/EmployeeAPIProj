@@ -8,7 +8,7 @@ http://localhost:8080/api
 
 ## Endpoints
 
-#### 1.Create a New Employee
+#### 1. Create a New Employee
 - **HTTP Method:** POST
 - **Endpoint:** `/employees`
 - **Description:** Add a new employee profile.
@@ -39,7 +39,7 @@ http://localhost:8080/api
     ```
   - **400 Bad Request:** Invalid input
 
-#### 2.View All Employees
+#### 2. View All Employees
 - **HTTP Method:** GET
 - **Endpoint:** `/employees`
 - **Description:** Retrieve all employee profiles.
@@ -61,7 +61,7 @@ http://localhost:8080/api
     ```
   - **204 No Content:** No employees found
 
-#### 3.Retrieve a Single Employee
+#### 3. Retrieve a Single Employee
 - **HTTP Method:** GET
 - **Endpoint:** `/employees/{id}`
 - **Description:** Retrieve details of a single employee by their ID.
@@ -82,7 +82,7 @@ http://localhost:8080/api
     ```
   - **404 Not Found:** Employee not found
 
-#### 4.Update Employee Information
+#### 4. Update Employee Information
 - **HTTP Method:** PUT
 - **Endpoint:** `/employees/{id}`
 - **Description:** Update employee information.
@@ -91,9 +91,9 @@ http://localhost:8080/api
 - **Request Body:**
     ```json
     {
-        "firstName": "Jane",
+        "firstName": "John",
         "lastName": "Doe",
-        "email": "jane.doe@example.com",
+        "email": "jone.doe@example.com",
         "jobRole": "Senior Developer",
         "salary": 80000,
         "hireDate": "2023-01-15"
@@ -104,7 +104,7 @@ http://localhost:8080/api
     ```json
     {
         "id": 1,
-        "firstName": "Jane",
+        "firstName": "John",
         "lastName": "Doe",
         "email": "jane.doe@example.com",
         "jobRole": "Senior Developer",
@@ -115,7 +115,7 @@ http://localhost:8080/api
   - **400 Bad Request:** Invalid input
   - **404 Not Found:** Employee not found
 
-#### 5.Delete Employee
+#### 5. Delete Employee
 - **HTTP Method:** DELETE
 - **Endpoint:** `/employees/{id}`
 - **Description:** Remove an employee from the system.
