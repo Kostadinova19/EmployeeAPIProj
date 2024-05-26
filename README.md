@@ -114,7 +114,6 @@ http://localhost:8080/api/employees
 
 - **200 OK:**
   ```json
-
  {
   "id": 1,
   "firstName": "John",
@@ -124,7 +123,7 @@ http://localhost:8080/api/employees
   "salary": 60000,
   "hireDate": "2023-01-01"
 }
-
+```
 - **404 Not Found:** Issue not found
 ---
 
@@ -153,7 +152,7 @@ http://localhost:8080/api/employees
   "salary": 70000,
   "hireDate": "2023-01-01"
 }
-**
+
 ```
 
 **Responses:**
