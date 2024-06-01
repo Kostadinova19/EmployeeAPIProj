@@ -1,7 +1,7 @@
 # Employee Management System API
 
 ## Introduction
-This API allows organizations to manage employee data efficiently, including personal details, job roles, performance reviews, salary information, and attendance records.
+This API allows organizations to manage employee data efficiently, including personal details, job roles, hire date, performance reviews and salary information.
 
 ## Base URL
 http://localhost:8080/api
